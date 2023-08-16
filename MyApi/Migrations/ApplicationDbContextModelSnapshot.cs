@@ -19,6 +19,39 @@ namespace MyApi.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("ExamenU3.Models.Proveedores", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CorreoElectronico")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("NombreEmpresa")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("NombreRepartidor")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Proveedores");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CorreoElectronico = "correo@correo",
+                            NombreEmpresa = "Test",
+                            NombreRepartidor = "Test",
+                            Telefono = "7775557794"
+                        });
+                });
+
             modelBuilder.Entity("MyApi.Models.Pedido", b =>
                 {
                     b.Property<int>("Id")
